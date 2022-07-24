@@ -11,3 +11,5 @@
 ci.log
 /Dockerfile.dapper*
 !/Dockerfile.dapper
+release.log
+.vscode/*
