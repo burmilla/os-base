@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2022.02.3 Configuration
+# Buildroot 2022.02.5 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -203,8 +203,10 @@ BR2_KERNEL_HEADERS_4_14=y
 # BR2_KERNEL_HEADERS_VERSION is not set
 # BR2_KERNEL_HEADERS_CUSTOM_TARBALL is not set
 # BR2_KERNEL_HEADERS_CUSTOM_GIT is not set
-BR2_DEFAULT_KERNEL_HEADERS="4.14.282"
+BR2_DEFAULT_KERNEL_HEADERS="4.14.287"
 BR2_PACKAGE_LINUX_HEADERS=y
+BR2_PACKAGE_UCLIBC_ARCH_SUPPORTS=y
+BR2_PACKAGE_UCLIBC_SUPPORTS=y
 
 #
 # Glibc Options
@@ -231,7 +233,7 @@ BR2_BINUTILS_EXTRA_CONFIG_OPTIONS=""
 BR2_GCC_VERSION_10_X=y
 # BR2_GCC_VERSION_11_X is not set
 BR2_GCC_SUPPORTS_DLANG=y
-BR2_GCC_VERSION="10.3.0"
+BR2_GCC_VERSION="10.4.0"
 BR2_EXTRA_GCC_CONFIG_OPTIONS=""
 # BR2_TOOLCHAIN_BUILDROOT_CXX is not set
 # BR2_TOOLCHAIN_BUILDROOT_FORTRAN is not set
@@ -472,6 +474,7 @@ BR2_PACKAGE_MJPEGTOOLS_SIMD_SUPPORT=y
 # ncmpc needs a toolchain w/ C++, wchar, threads, gcc >= 7
 #
 # BR2_PACKAGE_OPUS_TOOLS is not set
+# BR2_PACKAGE_PIPEWIRE is not set
 BR2_PACKAGE_PULSEAUDIO_HAS_ATOMIC=y
 # BR2_PACKAGE_PULSEAUDIO is not set
 # BR2_PACKAGE_SOX is not set
@@ -879,7 +882,7 @@ BR2_PACKAGE_XFSPROGS=y
 #
 
 #
-# glslsandbox-player needs a toolchain w/ threads and an openGL ES and EGL driver
+# glslsandbox-player needs openGL ES and EGL driver
 #
 # BR2_PACKAGE_GNUPLOT is not set
 # BR2_PACKAGE_JHEAD is not set
@@ -1764,7 +1767,6 @@ BR2_PACKAGE_JPEG_SIMD_SUPPORT=y
 #
 # pangomm needs a toolchain w/ C++, wchar, threads, gcc >= 7
 #
-# BR2_PACKAGE_PIPEWIRE is not set
 # BR2_PACKAGE_PIXMAN is not set
 
 #
@@ -2483,7 +2485,7 @@ BR2_PACKAGE_GOBJECT_INTROSPECTION_ARCH_SUPPORTS=y
 # BR2_PACKAGE_GSL is not set
 
 #
-# gtest needs a toolchain w/ C++, wchar, threads, gcc >= 4.9
+# gtest needs a toolchain w/ C++, wchar, threads, gcc >= 5
 #
 # BR2_PACKAGE_GUMBO_PARSER is not set
 BR2_PACKAGE_JEMALLOC_ARCH_SUPPORTS=y
@@ -2524,7 +2526,7 @@ BR2_PACKAGE_LIBBSD_ARCH_SUPPORTS=y
 BR2_PACKAGE_LIBEASTL_ARCH_SUPPORTS=y
 
 #
-# libeastl needs a toolchain w/ C++, gcc >= 4.9
+# libeastl needs a toolchain w/ C++, threads, gcc >= 4.9
 #
 # BR2_PACKAGE_LIBEE is not set
 # BR2_PACKAGE_LIBEV is not set
@@ -3743,6 +3745,7 @@ BR2_PACKAGE_PROVIDES_HOST_RUSTC="host-rust-bin"
 #
 # Legacy options removed in 2022.02
 #
+# BR2_PACKAGE_PHP_EXT_WDDX is not set
 # BR2_sh2a is not set
 BR2_TARGET_ROOTFS_OCI_ENTRYPOINT_ARGS=""
 # BR2_PACKAGE_LIBCURL_LIBNSS is not set
