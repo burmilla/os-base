@@ -1,0 +1,27 @@
+diff --git a/package/dhcpcd/dhcpcd.hash b/package/dhcpcd/dhcpcd.hash
+index 532fbd467e..2923b8ff63 100644
+--- a/package/dhcpcd/dhcpcd.hash
++++ b/package/dhcpcd/dhcpcd.hash
+@@ -1,4 +1,3 @@
+-# sha256 from ftp://roy.marples.name/pub/dhcpcd/dhcpcd-9.4.1.tar.xz.distinfo
+-sha256  819357634efed1ea5cf44ec01b24d3d3f8852fec8b4249925dcc5667c54e376c  dhcpcd-9.4.1.tar.xz
+ # Locally calculated
++sha256  c8f33866b7f23292ab9cff8002c630590e4ae94b658f03d5f814a104036fe3de  dhcpcd-dhcpcd-9.4.1-with-405507a.tar.gz
+ sha256  4f21ce186859516dcab9b3197f3e9533a9bd1b87932015c87f539af4a48cd592  LICENSE
+diff --git a/package/dhcpcd/dhcpcd.mk b/package/dhcpcd/dhcpcd.mk
+index 922d289b26..57ab2f59fe 100644
+--- a/package/dhcpcd/dhcpcd.mk
++++ b/package/dhcpcd/dhcpcd.mk
+@@ -4,9 +4,8 @@
+ #
+ ################################################################################
+
+-DHCPCD_VERSION = 9.4.1
+-DHCPCD_SOURCE = dhcpcd-$(DHCPCD_VERSION).tar.xz
+-DHCPCD_SITE = http://roy.marples.name/downloads/dhcpcd
++DHCPCD_VERSION = dhcpcd-9.4.1-with-405507a
++DHCPCD_SITE = $(call github,burmilla,dhcpcd,$(DHCPCD_VERSION))
+ DHCPCD_DEPENDENCIES = host-pkgconf
+ DHCPCD_LICENSE = BSD-2-Clause
+ DHCPCD_LICENSE_FILES = LICENSE
+ 
