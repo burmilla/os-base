@@ -43,7 +43,11 @@ busybox_install()
         cp $bbconf package/busybox/
     fi
     export HOME=${BUILD}
-    make oldconfig
+    if [ "$build" == "config" ]; then
+        make menuconfig
+    else
+        make oldconfig
+    fi
     cp .config ${target}.config
 
     if [ "$build" == "config" ]; then
