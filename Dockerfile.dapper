@@ -1,8 +1,8 @@
-FROM ubuntu
+FROM ubuntu:24.04
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata && \
-    apt-get install -y build-essential wget libncurses5-dev unzip bc curl python3 file rsync ccache vim less cpio texinfo locales git
+    apt-get install -y build-essential file wget libncurses5-dev unzip bc curl python3 file rsync ccache vim less cpio texinfo locales git
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
@@ -13,7 +13,7 @@ ENV SHELL /bin/bash
 ENV ARTIFACTS /usr/src
 WORKDIR ${DAPPER_SOURCE}
 
-ENV VERSION 2023.02.10
+ENV VERSION 2025.02.16
 ENV TARBALL ${VERSION}.tar.gz
 RUN cd ${ARTIFACTS} && \
     wget https://github.com/buildroot/buildroot/archive/$TARBALL
