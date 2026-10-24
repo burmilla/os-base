@@ -32,8 +32,8 @@ busybox_install()
     tar xf ${ARTIFACTS}/${buildroot} -C ${DIR} --strip-components=1
     cd ${DIR}
 
-    echo "Enabling custom patches"
-    for p in `find ../../patches -name "*.patch"`; do
+    echo "Enabling custom patches for buildroot ${TARBALL%.tar.gz}"
+    for p in `find ../../patches/${TARBALL%.tar.gz} -name "*.patch" 2>/dev/null`; do
         echo "patching $p"
         patch -p1 -i $p
     done
