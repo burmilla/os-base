@@ -13,10 +13,13 @@ ENV SHELL /bin/bash
 ENV ARTIFACTS /usr/src
 WORKDIR ${DAPPER_SOURCE}
 
+# Buildroot used for amd64 and arm64
 ENV VERSION 2025.02.18
-ENV TARBALL ${VERSION}.tar.gz
+# Buildroot used for riscv64 and loong64: 2025.02 has no LoongArch support and no kexec for RISC-V
+ENV VERSION_NEW_ARCHS 2026.02.3
 RUN cd ${ARTIFACTS} && \
-    wget https://github.com/buildroot/buildroot/archive/$TARBALL
+    wget https://github.com/buildroot/buildroot/archive/${VERSION}.tar.gz && \
+    wget https://github.com/buildroot/buildroot/archive/${VERSION_NEW_ARCHS}.tar.gz
 
 ARG DAPPER_HOST_ARCH=amd64
 ARG HOST_ARCH=${DAPPER_HOST_ARCH}

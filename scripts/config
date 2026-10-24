@@ -12,6 +12,10 @@ echo "about to update config ${ARCH}"
 mkdir -p ${DIST}/artifacts
 
 for arch in $ARCH; do
+  case ${arch} in
+    riscv64|loong64) export TARBALL=${VERSION_NEW_ARCHS}.tar.gz ;;
+    *) export TARBALL=${VERSION}.tar.gz ;;
+  esac
   echo "++++++++ updating config ${arch}"
   ./scripts/build-busybox "config" ${CONFIG}/${arch}/buildroot-config ${CONFIG}/busybox-dynamic.config ${DIST}/artifacts/os-base_${arch}.tar.xz
 done
