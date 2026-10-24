@@ -305,7 +305,7 @@ BR2_XZCAT="xzcat"
 BR2_LZCAT="lzip -d -c"
 BR2_ZSTDCAT="zstdcat"
 BR2_TAR_OPTIONS=""
-BR2_DEFCONFIG="/tmp/claude-0/-home-user/bff00595-6c40-570e-8a39-1a0cc31ff158/scratchpad/br/work.B4UD/new.defconfig"
+BR2_DEFCONFIG="/tmp/claude-0/-home-user/bff00595-6c40-570e-8a39-1a0cc31ff158/scratchpad/br/work.sWQ9/new.defconfig"
 BR2_DL_DIR="$(HOME)/.dl"
 BR2_HOST_DIR="$(BASE_DIR)/host"
 
@@ -3086,7 +3086,7 @@ BR2_PACKAGE_Z3_ARCH_SUPPORTS=y
 # BR2_PACKAGE_DEHYDRATED is not set
 # BR2_PACKAGE_DHCP is not set
 BR2_PACKAGE_DHCPCD=y
-BR2_PACKAGE_DHCPCD_ENABLE_PRIVSEP=y
+# BR2_PACKAGE_DHCPCD_ENABLE_PRIVSEP is not set
 # BR2_PACKAGE_DHCPDUMP is not set
 # BR2_PACKAGE_DNSMASQ is not set
 # BR2_PACKAGE_DRBD_UTILS is not set
