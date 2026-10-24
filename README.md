@@ -3,7 +3,9 @@ This repository is used to build OS base for BurmillaOS.
 
 ## How to contribute
 - Fork this repository and create new branch based on master branch.
-- Check what is latest [buildroot LTS version](https://buildroot.org/download.html) and update BUILDROOT_VERSION value Dockerfile.dapper
+- Check what is latest [buildroot LTS version](https://buildroot.org/download.html) and update VERSION value in Dockerfile.dapper
+  (amd64 and arm64 are built with VERSION, riscv64 and loong64 with VERSION_NEW_ARCHS)
+- Patches in `patches/<buildroot version>/` are applied on top of that buildroot version
 - Re-configure (needed to handle updated/changed packages):
 ```bash
 make config
@@ -14,6 +16,7 @@ make config
 cp dist/artifacts/busybox-dynamic.config config/busybox-dynamic.config
 cp dist/artifacts/buildroot-config-static config/amd64/buildroot-config-static
 ```
+- Configs for other architectures (arm64, riscv64, loong64) are updated the same way with `ARCH=<arch> make config`
 - Test build with command:
 ```bash
 ARCH=amd64 RELEASE_VERSION=yyyy.mm.dd-test make release

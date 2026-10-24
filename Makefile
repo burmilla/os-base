@@ -1,5 +1,9 @@
 TARGETS := $(shell ls scripts | grep -vE 'clean|run|help|config')
 
+# make the dapper exit status survive the pipe to tee
+SHELL := /bin/bash
+.SHELLFLAGS := -o pipefail -c
+
 .dapper:
 	@echo Downloading dapper
 	@curl -sL https://releases.rancher.com/dapper/latest/dapper-`uname -s`-`uname -m|sed 's/v7l//'` > .dapper.tmp
